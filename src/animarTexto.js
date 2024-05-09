@@ -4,9 +4,26 @@ const animarTexto = (elemento) => {
     cursor.classList.add('hero__cursor--visible');
     
     for (let i = 0; i < nroLetras; i++) {
-        console.log(elemento.dataset.texto[i]);
+        setTimeout(() => {
+            const letra = elemento.dataset.texto[i];
+            const etiquetaLetra = document.createElement('span');
+            etiquetaLetra.append(letra);
+            elemento.append(etiquetaLetra);
+        }, 100 * i);
+        
     }
 
+    setTimeout(() => {
+        const cursores = [...document.querySelector('.hero__header').querySelectorAll('.hero__cursor')];
+        const cursorActual = cursores.indexOf(cursor);
+        if (cursorActual < cursores.length - 1) {
+            cursor.classList.remove("hero__cursor--visible");
+        } else {
+            cursor.classList.add("hero__cursor--active");
+        };
+    }, nroLetras * 100);
+
+    return new Promise((resolve) => setTimeout(resolve, nroLetras * 100));
 };
 
 export default animarTexto;

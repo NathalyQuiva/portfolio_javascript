@@ -1,6 +1,6 @@
 import animarTexto from "./animarTexto";
 
-window.addEventListener('load', () => {
-    const texto = document.querySelector(".hero__titulo--uno");
-    animarTexto(texto);
-})
+window.addEventListener('load', async() => {
+    await animarTexto(document.querySelector(".hero__titulo--uno"));
+    await animarTexto(document.querySelector(".hero__titulo--dos"));
+});
