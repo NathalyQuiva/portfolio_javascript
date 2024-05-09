@@ -1,5 +1,23 @@
 'use strict';
 
+const gallery = document.getElementById('trabajos');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        if (entries[0].isIntersecting) {
+            const works = document.querySelectorAll('.trabajos__imagenes a');
+            works.forEach(work => {
+                classList.add('');
+            });
+        }
+}, 
+{
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.5,
+});
+
+observer.observe(gallery);
+
 const animarTexto = (elemento) => { 
     const nroLetras = elemento.dataset.texto.length;
     const cursor = elemento.querySelector('.hero__cursor');
@@ -28,7 +46,10 @@ const animarTexto = (elemento) => {
 };
 
 window.addEventListener('load', async() => {
-    await animarTexto(document.querySelector(".hero__titulo--uno"));
-    await animarTexto(document.querySelector(".hero__titulo--dos"));
+    await animarTexto(document.querySelector('.hero__titulo--uno'));
+    await animarTexto(document.querySelector('.hero__titulo--dos'));
+
+    document.querySelectorAll(".hero__burbuja")[0].classList.add('hero__burbuja--active-1');
+    document.querySelectorAll(".hero__burbuja")[1].classList.add('hero__burbuja--active-2');
 });
 //# sourceMappingURL=bundle.js.map
