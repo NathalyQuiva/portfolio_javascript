@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('galery');
-
 const gallery = document.getElementById('trabajos');
 
 const observer = new IntersectionObserver(
@@ -22,6 +20,9 @@ const observer = new IntersectionObserver(
 });
 
 observer.observe(gallery);
+
+document.getElementById('trabajos');
+documento.getElementById('ventana-trabajos');
 
 const animarTexto = (elemento) => { 
     const nroLetras = elemento.dataset.texto.length;

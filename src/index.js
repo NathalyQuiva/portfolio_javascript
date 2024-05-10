@@ -1,5 +1,5 @@
-import './gallery';
 import './animatedGallery';
+import './gallery';
 import animarTexto from './animarTexto';
 
 window.addEventListener('load', async() => {
