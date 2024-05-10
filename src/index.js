@@ -1,3 +1,4 @@
+import './gallery';
 import './animatedGallery';
 import animarTexto from './animarTexto';
 
