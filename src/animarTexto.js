@@ -1,3 +1,5 @@
+// "sass": "sass --watch --update --style=expanded sass/index.scss:public/bundle.css",
+
 const animarTexto = (elemento) => { 
     const nroLetras = elemento.dataset.texto.length;
     const cursor = elemento.querySelector('.hero__cursor');
