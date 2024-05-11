@@ -102,6 +102,19 @@ works.addEventListener('click', (event) => {
     }
 });
 
+ventana.querySelector('button[data-action="cerrar-ventana"]').addEventListener('click', (event) => {
+    event.preventDefault();
+    ventana.classList.remove('ventana--active');
+});
+
+ventana.querySelector('.ventana__overlay').addEventListener('click', (event) => {
+    event.preventDefault();
+    const overlay = event.target.matches('.ventana__overlay');
+    if (overlay) {
+        ventana.classList.remove('ventana--active');
+    }
+});
+
 window.addEventListener('load', async() => {
     await animarTexto(document.querySelector('.hero__titulo--uno'));
     await animarTexto(document.querySelector('.hero__titulo--dos'));
