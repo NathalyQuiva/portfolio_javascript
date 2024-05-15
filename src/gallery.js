@@ -45,11 +45,12 @@ works.addEventListener('click', (event) => {
         ventana.querySelector('.ventana__fecha').innerText = date;
         ventana.querySelector('.ventana__parrafo').innerText = description;
         ventana.querySelector('.ventana__imagen').src = clickWork.querySelector('img').src;
-        ventana.querySelector('.ventana__website').href = website;
-        ventana.querySelector('.ventana__github').href = github;
+        // ventana.querySelector('.ventana__website').href = website;
+        // console.log(ventana.querySelector('.ventana__website')
+    // )
+        // ventana.querySelector('.ventana__github').href = github;
         ventana.classList.add('ventana--active');
-        
-    }
+    } 
 });
 
 ventana.querySelector('button[data-action="cerrar-ventana"]').addEventListener('click', (event) => {

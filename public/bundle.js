@@ -1,5 +1,7 @@
 'use strict';
 
+// "sass": "sass --watch --update --style=expanded sass/index.scss:public/bundle.css",
+
 const animarTexto = (elemento) => { 
     const nroLetras = elemento.dataset.texto.length;
     const cursor = elemento.querySelector('.hero__cursor');
@@ -95,11 +97,12 @@ works.addEventListener('click', (event) => {
         ventana.querySelector('.ventana__fecha').innerText = date;
         ventana.querySelector('.ventana__parrafo').innerText = description;
         ventana.querySelector('.ventana__imagen').src = clickWork.querySelector('img').src;
-        ventana.querySelector('.ventana__website').href = website;
-        ventana.querySelector('.ventana__github').href = github;
+        // ventana.querySelector('.ventana__website').href = website;
+        // console.log(ventana.querySelector('.ventana__website')
+    // )
+        // ventana.querySelector('.ventana__github').href = github;
         ventana.classList.add('ventana--active');
-        
-    }
+    } 
 });
 
 ventana.querySelector('button[data-action="cerrar-ventana"]').addEventListener('click', (event) => {
@@ -114,6 +117,43 @@ ventana.querySelector('.ventana__overlay').addEventListener('click', (event) => 
         ventana.classList.remove('ventana--active');
     }
 });
+
+const slider = document.getElementById('slider');
+
+let sliderPress = false;
+let initialDistance;
+let scrollLeft;
+
+const mouseDown = (e) => {
+    sliderPress = true;
+
+    initialDistance = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+
+    console.log('pageX', e.pageX);
+    console.log('slider.offsetLeft', slider.offsetLeft);
+    console.log('scrollLeft', slider.scrollLeft);
+};
+
+const mouseMove = (e) => {
+    if(!sliderPress) {
+        return;
+    } 
+
+    const space = e.pageX - slider.offsetLeft;
+    const distanceTraveled = space - initialDistance;
+
+    slider.scrollLeft = scrollLeft - distanceTraveled;
+};
+
+const mouseUp = (e) => {
+    sliderPress = false;
+    console.log(" No presionado");
+};
+
+slider.addEventListener('mousedown', mouseDown);
+slider.addEventListener('mousemove', mouseMove);
+slider.addEventListener('mouseup', mouseUp);
 
 window.addEventListener('load', async() => {
     await animarTexto(document.querySelector('.hero__titulo--uno'));
