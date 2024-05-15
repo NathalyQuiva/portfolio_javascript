@@ -130,9 +130,9 @@ const mouseDown = (e) => {
     initialDistance = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
 
-    console.log('pageX', e.pageX);
-    console.log('slider.offsetLeft', slider.offsetLeft);
-    console.log('scrollLeft', slider.scrollLeft);
+    // console.log('pageX', e.pageX);
+    // console.log('slider.offsetLeft', slider.offsetLeft);
+    // console.log('scrollLeft', slider.scrollLeft);
 };
 
 const mouseMove = (e) => {
@@ -144,7 +144,7 @@ const mouseMove = (e) => {
     const distanceTraveled = space - initialDistance;
 
     slider.scrollLeft = scrollLeft - distanceTraveled;
-    console.log('sliderfinal', slider.scrollLeft);
+    // console.log('sliderfinal', slider.scrollLeft);
 };
 
 const mouseUp = (e) => {
