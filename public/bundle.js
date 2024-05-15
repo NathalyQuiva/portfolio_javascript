@@ -144,6 +144,7 @@ const mouseMove = (e) => {
     const distanceTraveled = space - initialDistance;
 
     slider.scrollLeft = scrollLeft - distanceTraveled;
+    console.log('sliderfinal', slider.scrollLeft);
 };
 
 const mouseUp = (e) => {
