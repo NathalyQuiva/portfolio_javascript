@@ -361,6 +361,7 @@ a:hover {
   color: #fff;
   width: 40px;
   height: 40px;
+  pointer-events: initial;
 }
 .ventana__icono-cerrar {
   width: 100%;
@@ -386,6 +387,7 @@ a:hover {
   grid-template-columns: 3fr 2fr;
   gap: 20px;
   position: relative;
+  pointer-events: initial;
 }
 .ventana__imagen {
   width: 100%;
@@ -404,6 +406,12 @@ a:hover {
   flex-direction: column;
   gap: 20px;
   padding: 20px 0;
+}
+.ventana__website {
+  pointer-events: initial;
+}
+.ventana__github {
+  pointer-events: initial;
 }
 
 /*# sourceMappingURL=bundle.css.map */

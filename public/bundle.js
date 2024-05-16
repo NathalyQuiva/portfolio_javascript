@@ -78,6 +78,14 @@ const data = [
         website: 'https://restful-api-movies-6.onrender.com/',
         github: 'https://github.com/NathalyQuiva/restful_api_movies'
     },
+    {
+        id: '4',
+        title: 'Project Portfolio',
+        date: 'May 2024',
+        description: 'Website about my personal projects. Made using HTML5, Javascript, Rollup compiler, CSS, Sass compiler.',
+        website: 'https://nathalyquiva.github.io/portfolio_javascript/',
+        github: 'https://github.com/NathalyQuiva/portfolio_javascript'
+    },
 ];
 
 works.addEventListener('click', (event) => {
@@ -97,10 +105,10 @@ works.addEventListener('click', (event) => {
         ventana.querySelector('.ventana__fecha').innerText = date;
         ventana.querySelector('.ventana__parrafo').innerText = description;
         ventana.querySelector('.ventana__imagen').src = clickWork.querySelector('img').src;
-        // ventana.querySelector('.ventana__website').href = website;
-        // console.log(ventana.querySelector('.ventana__website')
-    // )
-        // ventana.querySelector('.ventana__github').href = github;
+        ventana.querySelector('.ventana__website').href = website;
+        ventana.querySelector('.ventana__github').href = github;
+        console.log(ventana.querySelector('.ventana__website').href,
+        ventana.querySelector('.ventana__github').href);
         ventana.classList.add('ventana--active');
     } 
 });
@@ -129,10 +137,6 @@ const mouseDown = (e) => {
 
     initialDistance = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
-
-    // console.log('pageX', e.pageX);
-    // console.log('slider.offsetLeft', slider.offsetLeft);
-    // console.log('scrollLeft', slider.scrollLeft);
 };
 
 const mouseMove = (e) => {
@@ -144,17 +148,33 @@ const mouseMove = (e) => {
     const distanceTraveled = space - initialDistance;
 
     slider.scrollLeft = scrollLeft - distanceTraveled;
-    // console.log('sliderfinal', slider.scrollLeft);
 };
 
 const mouseUp = (e) => {
     sliderPress = false;
-    console.log(" No presionado");
 };
 
 slider.addEventListener('mousedown', mouseDown);
 slider.addEventListener('mousemove', mouseMove);
 slider.addEventListener('mouseup', mouseUp);
+
+const buttons = document.querySelectorAll('[data-action="abrir-ventana-correo"]');
+const mailWindows = document.getElementById('ventana-correo');
+const closeButton = document.querySelectorAll('[data-action="cerrar-ventana"]');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        mailWindows.classList.add('ventana--active');
+    });
+});
+
+closeButton.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        mailWindows.classList.remove('ventana--active');
+    });
+});
 
 window.addEventListener('load', async() => {
     await animarTexto(document.querySelector('.hero__titulo--uno'));

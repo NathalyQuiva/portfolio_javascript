@@ -26,6 +26,14 @@ const data = [
         website: 'https://restful-api-movies-6.onrender.com/',
         github: 'https://github.com/NathalyQuiva/restful_api_movies'
     },
+    {
+        id: '4',
+        title: 'Project Portfolio',
+        date: 'May 2024',
+        description: 'Website about my personal projects. Made using HTML5, Javascript, Rollup compiler, CSS, Sass compiler.',
+        website: 'https://nathalyquiva.github.io/portfolio_javascript/',
+        github: 'https://github.com/NathalyQuiva/portfolio_javascript'
+    },
 ];
 
 works.addEventListener('click', (event) => {
@@ -45,10 +53,10 @@ works.addEventListener('click', (event) => {
         ventana.querySelector('.ventana__fecha').innerText = date;
         ventana.querySelector('.ventana__parrafo').innerText = description;
         ventana.querySelector('.ventana__imagen').src = clickWork.querySelector('img').src;
-        // ventana.querySelector('.ventana__website').href = website;
-        // console.log(ventana.querySelector('.ventana__website')
-    // )
-        // ventana.querySelector('.ventana__github').href = github;
+        ventana.querySelector('.ventana__website').href = website;
+        ventana.querySelector('.ventana__github').href = github;
+        console.log(ventana.querySelector('.ventana__website').href,
+        ventana.querySelector('.ventana__github').href)
         ventana.classList.add('ventana--active');
     } 
 });

@@ -2,6 +2,7 @@ import animarTexto from './animarTexto';
 import './animatedGallery';
 import './gallery';
 import './slider';
+import './mail';
 
 window.addEventListener('load', async() => {
     await animarTexto(document.querySelector('.hero__titulo--uno'));
