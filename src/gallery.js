@@ -4,11 +4,18 @@ const ventana = document.getElementById('ventana-trabajos');
 const data = [
     {
         id: '1',
-        title: 'Profinder',
-        date: 'August 2023',
-        description: 'It is a dating application that allows service provider users to publish their services and offer them within various categories in different areas of Latin America. Client users can consult these publications according to their area and establish contact with service providers to hire them.',
-        website: 'https://profinder-client.vercel.app/',
-        github: 'https://github.com/NathalyQuiva/profinder_services_application?tab=readme-ov-file'
+        title: 'Project Portfolio',
+        date: 'May 2024',
+        description: 'Website about my personal projects. Made using HTML5, Javascript, Rollup compiler, CSS, Sass compiler.',
+        website: 'https://nathalyquiva.github.io/portfolio_javascript/',
+        github: 'https://github.com/NathalyQuiva/portfolio_javascript'
+    },
+    {
+        id: '5',
+        title: 'Data exploration, cleaning, transformation and analysis.',
+        date: 'January 2025',
+        description: 'Data exploration, cleaning, transformation, and analysis using Jupyter notebook, Python, Pandas, and Matplotlib. Work that involves cleaning, graphing, and creating new datasets.',
+        github: 'https://github.com/NathalyQuiva/python_data-analyst/blob/main/clean_data.ipynb'
     },
     {
         id: '2',
@@ -28,11 +35,11 @@ const data = [
     },
     {
         id: '4',
-        title: 'Project Portfolio',
-        date: 'May 2024',
-        description: 'Website about my personal projects. Made using HTML5, Javascript, Rollup compiler, CSS, Sass compiler.',
-        website: 'https://nathalyquiva.github.io/portfolio_javascript/',
-        github: 'https://github.com/NathalyQuiva/portfolio_javascript'
+        title: 'Profinder',
+        date: 'August 2023',
+        description: 'It is a dating application that allows service provider users to publish their services and offer them within various categories in different areas of Latin America. Client users can consult these publications according to their area and establish contact with service providers to hire them.',
+        website: 'https://profinder-client.vercel.app/',
+        github: 'https://github.com/NathalyQuiva/profinder_services_application?tab=readme-ov-file'
     },
 ];
 
